@@ -1,9 +1,9 @@
 sudo: required
 service: docker
 before_install: 
-  - dokcer-compose up --build -d
+  - docker-compose up --build -d
 
 script: 
-  - dokcer-compose exec -env 'rails_ENV=test' web rails db:create
-  - dokcer-compose exec -env 'rails_ENV=test' web rails db:migrate
-  - dokcer-compose exec -env 'rails_ENV=test' web rails test
+  - docker-compose exec -env 'rails_ENV=test' web rails db:create
+  - docker-compose exec -env 'rails_ENV=test' web rails db:migrate
+  - docker-compose exec -env 'rails_ENV=test' web rails test
